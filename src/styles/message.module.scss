@@ -1,0 +1,42 @@
+$trans-time:0.3s;
+
+.msg{
+    @include center;
+    @include flex-center;
+    @include active(1px,solid,$formal,#fff);
+     color:$formal;
+     font-weight: bold;
+     border-radius: 10px;
+     padding:1.5rem;
+     transition:  all  $trans-time ease-out; 
+     z-index: 1000;
+     font-size: 2rem;
+}
+.mask{
+   @include mask;
+   transition:  all  $trans-time ease-out; 
+}
+
+.content-state1,.content-state3{
+    transform: translate(-50%,50%);
+    opacity: 0;
+}
+
+.content-state2{
+    transform: translate(-50%,-50%);
+    opacity: 1;
+}
+
+
+.mask-state1,.mask-state3{
+    opacity: 0;
+}
+
+.mask-state2{
+    opacity: .5;
+}
+
+
+.content-state3,.mask-state3{
+    transition-timing-function: ease-in;
+}
